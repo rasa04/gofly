@@ -13,8 +13,14 @@ import (
 	"os"
 )
 
+const openai_api_key = ""
+
 func getOpenAiSecret() string {
-	return os.Getenv("OPENAI_API_KEY")
+	if openai_api_key == "" {
+		return os.Getenv("OPENAI_API_KEY")
+	}
+
+	return openai_api_key
 }
 
 func Ask(messages []entities.Message) entities.ResponseInterface {

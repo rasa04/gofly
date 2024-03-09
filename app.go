@@ -3,7 +3,6 @@ package main
 import (
 	"app/gpt"
 	"app/gpt/entities"
-	"log"
 	"os"
 	"strings"
 	"github.com/joho/godotenv"
@@ -20,5 +19,5 @@ func main() {
 		},
 	})
 
-	log.Println(response.GetAnswer())
+	println("\n - " + response.GetAnswer() + "\n")
 }
